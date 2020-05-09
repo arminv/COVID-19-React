@@ -44,7 +44,7 @@ const PieChart = ({ data }) => {
       ],
     },
     options: {
-      maintainAspectRatio: true,
+      // maintainAspectRatio: true,
       title: {
         display: true,
         text: country === 'All' ? 'Global' : `Current Situation in ${country}`,

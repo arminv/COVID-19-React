@@ -48,7 +48,10 @@ const LineChart = (allData) => {
         {
           label: 'Total Cases',
           data: continent ? continentData : countriesData,
-          backgroundColor: 'rgba(54, 162, 235, 0.1)',
+          backgroundColor: 'rgba(250, 255, 156,0.1)',
+          // backgroundColor: 'rgba(54, 162, 235, 0.1)',
+          // backgroundColor: 'rgba(158, 94, 255, 0.2)',
+          // backgroundColor: 'rgba(255, 138, 255, 0.1)',
           borderColor: [
             'rgba(54, 162, 235, 1)',
             'rgba(255, 99, 132, 1)',
@@ -82,7 +85,7 @@ const LineChart = (allData) => {
           bottom: 0,
         },
       },
-      maintainAspectRatio: true,
+      // maintainAspectRatio: true,
       title: {
         display: true,
         text: continent

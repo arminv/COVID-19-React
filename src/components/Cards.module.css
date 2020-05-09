@@ -7,8 +7,18 @@
   border: 5px solid #dec79b;
 }
 
-@media (max-width: 770px) {
-  .card {
-    margin: 2% 0 !important;
-  }
+.totalCases {
+  color: blue !important;
+}
+
+.totalNewCases {
+  color: rgba(199, 131, 4, 0.911) !important;
+}
+
+.totalDeaths {
+  color: red !important;
+}
+
+.totalTests {
+  color: #41c518 !important;
 }

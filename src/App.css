@@ -10,19 +10,51 @@ body {
   display: grid;
   grid-template-areas:
     'card card card card card'
-    '. . dropdown . . '
+    '. . dropdown . .'
     'charts charts charts charts charts';
   align-content: center;
-  margin: 2% 5%;
+  /* margin: 2% 15%; */
   padding: 0% 0%;
   align-items: center;
   align-content: center;
 }
 
+@media (max-width: 770px) {
+  .container {
+    grid-template-areas:
+      '. . card . .'
+      '. . dropdown . .'
+      '. charts charts charts .';
+
+    margin: 0;
+  }
+  .charts {
+    margin: 10%;
+  }
+  .card {
+    margin: 0% 10%;
+  }
+}
+@media (max-width: 650px) {
+  .container {
+    grid-template-areas:
+      '. card .'
+      '. dropdown .'
+      'charts charts charts';
+  }
+  .charts {
+    margin: 10%;
+  }
+  .card {
+    margin: 0% 10%;
+  }
+}
+
 .dropdown {
-  margin-top: 10%;
   grid-area: dropdown;
-  padding: 2% 3% !important;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  padding: 2% 2% !important;
   border: 1px solid #dec79b;
   background: whitesmoke;
 }
@@ -32,21 +64,8 @@ body {
 }
 
 .charts {
-  /* width: 90vw; */
-  padding: 2% 2%;
-  margin: 5% 0%;
-  border: 1px solid #dec79b;
   grid-area: charts;
-  /* background: whitesmoke; */
+  margin: 2% 20%;
+  padding: 2% 2%;
+  border: 1px solid #dec79b;
 }
-
-/*
-@media (max-width: 770px) {
-  .container {
-    margin: 0 10%;
-  }
-
-  .image {
-    width: 100%;
-  }
-} */

@@ -1,6 +1,12 @@
 import React from 'react';
 
-import { Card, CardContent, Typography, Grid } from '@material-ui/core';
+import {
+  Card,
+  CardContent,
+  Typography,
+  Grid,
+  CardHeader,
+} from '@material-ui/core';
 import CountUp from 'react-countup';
 
 import styles from './Cards.module.css';
@@ -10,17 +16,20 @@ const Cards = ({ data }) => {
 
   return (
     <div className={styles.container}>
-      <Grid container spacing={3} justify='center'>
+      <Grid container spacing={1} justify='center'>
         <Grid item component={Card} xs={12} md={3} className={styles.card}>
           <Card variant='outlined'>
-            <Typography variant='h5' component='h2'>
-              {country === 'All' ? 'Global' : country}
-            </Typography>
+            <CardHeader title={country === 'All' ? 'Global' : country} />
             <CardContent>
-              <Typography color='textSecondary' gutterBottom>
+              <Typography
+                className={styles.totalCases}
+                variant='h6'
+                color='textSecondary'
+                gutterBottom
+              >
                 Total Cases
               </Typography>
-              <Typography variant='h5'>
+              <Typography variant='h6'>
                 <CountUp
                   start={0}
                   end={cases.total}
@@ -28,22 +37,34 @@ const Cards = ({ data }) => {
                   separator=','
                 ></CountUp>
               </Typography>
-              <Typography color='textSecondary' gutterBottom>
+              <br />
+              <Typography
+                className={styles.totalNewCases}
+                variant='h6'
+                color='textSecondary'
+                gutterBottom
+              >
                 Total New Cases
               </Typography>
-              <Typography variant='h5'>
+              <Typography variant='h6'>
                 +
                 <CountUp
                   start={0}
-                  end={cases.new ? parseInt(cases.new.substr(1)) : null}
+                  end={cases.new ? parseInt(cases.new.substr(1)) : 0}
                   duration={2.5}
                   separator=','
                 ></CountUp>
               </Typography>
-              <Typography color='textSecondary' gutterBottom>
+              <br />
+              <Typography
+                className={styles.totalDeaths}
+                variant='h6'
+                color='textSecondary'
+                gutterBottom
+              >
                 Total Deaths
               </Typography>
-              <Typography variant='h5'>
+              <Typography variant='h6'>
                 <CountUp
                   start={0}
                   end={deaths.total}
@@ -51,13 +72,18 @@ const Cards = ({ data }) => {
                   separator=','
                 ></CountUp>
               </Typography>
-
+              <br />
               {tests.total ? (
                 <>
-                  <Typography color='textSecondary' gutterBottom>
+                  <Typography
+                    className={styles.totalTests}
+                    variant='h6'
+                    color='textSecondary'
+                    gutterBottom
+                  >
                     Total Tests
                   </Typography>
-                  <Typography variant='h5'>
+                  <Typography variant='h6'>
                     <CountUp
                       start={0}
                       end={tests.total}
@@ -65,15 +91,15 @@ const Cards = ({ data }) => {
                       separator=','
                     ></CountUp>
                   </Typography>
+                  <br />
                 </>
               ) : (
                 <></>
               )}
 
               <Typography color='textSecondary'>
-                {new Date(day).toDateString()}
+                <i>Last Update : {new Date(day).toDateString()}</i>
               </Typography>
-              <Typography variant='body2'>Total Number of Cases</Typography>
             </CardContent>
           </Card>
         </Grid>
