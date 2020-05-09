@@ -77,14 +77,14 @@ const LineChart = (allData) => {
       ],
     },
     options: {
-      layout: {
-        padding: {
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0,
-        },
-      },
+      // layout: {
+      //   padding: {
+      //     left: 0,
+      //     right: 0,
+      //     top: 0,
+      //     bottom: 0,
+      //   },
+      // },
       // maintainAspectRatio: true,
       title: {
         display: true,
@@ -121,7 +121,7 @@ const LineChart = (allData) => {
 
   return (
     <div>
-      <canvas ref={chartContainer} />
+      <canvas ref={chartContainer} style={{ height: '100%' }} />
     </div>
   );
 };

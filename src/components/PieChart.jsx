@@ -78,7 +78,7 @@ const PieChart = ({ data }) => {
 
   return (
     <div>
-      <canvas ref={chartContainer} />
+      <canvas ref={chartContainer} style={{ height: '100%' }} />
     </div>
   );
 };
