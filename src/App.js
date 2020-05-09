@@ -71,7 +71,6 @@ const App = () => {
     <LinearProgress className='loading' />
   ) : (
     <div className='container'>
-      {/* <div className='dropdown'> */}
       <FormControl className='dropdown'>
         <NativeSelect
           defaultValue=''
@@ -81,7 +80,6 @@ const App = () => {
           {allCountriesList}
         </NativeSelect>
       </FormControl>
-      {/* </div> */}
 
       <div className='card'>
         <Cards data={data[0]} />

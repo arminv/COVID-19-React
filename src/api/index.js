@@ -8,7 +8,7 @@ const HEADERS = {
   'x-rapidapi-key': API_KEY,
 };
 
-// Get List of All Countries:
+// Get list of all countries:
 export const fetch_all_countries = async () => {
   return await axios({
     method: 'GET',

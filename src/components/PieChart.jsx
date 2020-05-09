@@ -7,12 +7,7 @@ const PieChart = ({ data }) => {
   const chartConfig = {
     type: 'pie',
     data: {
-      labels: [
-        'New Cases',
-        'Critical',
-        'Recovered',
-        'Total Deaths',
-      ],
+      labels: ['New Cases', 'Critical', 'Recovered', 'Total Deaths'],
       datasets: [
         {
           label: 'Bar Chart',
@@ -44,23 +39,11 @@ const PieChart = ({ data }) => {
       ],
     },
     options: {
-      // maintainAspectRatio: true,
       title: {
         display: true,
-        text: country === 'All' ? 'Global' : `Current Situation in ${country}`,
+        text: country === 'All' ? 'Global' : `${country}`,
       },
-      legend: { display: true, labels: { padding: 30 }},
-      //   scales: {
-      //     yAxes: [
-      //       {
-      //         // type: 'logarithmic',
-      //         ticks: {
-      //           //   beginAtZero: false,
-      //           min: 0,
-      //         },
-      //       },
-      //     ],
-      //   },
+      legend: { display: true, labels: { padding: 30 } },
     },
   };
 

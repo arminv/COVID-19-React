@@ -13,7 +13,7 @@ const BarChart = ({ data }) => {
           : ['Total Cases', 'Total Deaths', 'Total Tests'],
       datasets: [
         {
-          label: 'Bar Chart',
+          // label: 'Bar Chart',
           data:
             country === 'All'
               ? [cases.total, deaths.total]
@@ -42,7 +42,7 @@ const BarChart = ({ data }) => {
       // maintainAspectRatio: true,
       title: {
         display: true,
-        text: country === 'All' ? 'Global' : `Current Situation in ${country}`,
+        text: country === 'All' ? 'Global' : `${country}`,
       },
       legend: { display: false },
       scales: {
