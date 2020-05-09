@@ -58,9 +58,12 @@ body {
 @media (max-width: 650px) {
   .container {
     grid-template-areas:
-      'card'
+      /* 'card'
       'dropdown'
-      'charts';
+      'charts'; */
+      '. . card . .'
+      '. . dropdown . .'
+      '. charts charts charts .';
   }
   .charts {
     margin: 10%;
