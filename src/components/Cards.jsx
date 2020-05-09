@@ -12,7 +12,8 @@ import CountUp from 'react-countup';
 import styles from './Cards.module.css';
 
 const Cards = ({ data }) => {
-  const { country, cases, deaths, tests, day } = data;
+  const { country, cases, deaths, tests, time } = data;
+  console.log(typeof time);
 
   return (
     <div className={styles.container}>
@@ -98,7 +99,10 @@ const Cards = ({ data }) => {
               )}
 
               <Typography color='textSecondary'>
-                <i>Last Update : {new Date(day).toDateString()}</i>
+                <i>
+                  Last Update : {new Date(time).toDateString()} -
+                  {new Date(time).toTimeString()}
+                </i>
               </Typography>
             </CardContent>
           </Card>

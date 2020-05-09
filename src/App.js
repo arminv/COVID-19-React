@@ -78,8 +78,8 @@ const App = () => {
     <div className='container'>Loading</div>
   ) : (
     <div className='container'>
-      <div className='dropdown'>
-        <FormControl>
+      {/* <div className='dropdown'> */}
+        <FormControl className='dropdown'>
           <NativeSelect
             defaultValue=''
             onChange={(e) => handleCountryChange(e.target.value)}
@@ -88,7 +88,7 @@ const App = () => {
             {allCountriesList}
           </NativeSelect>
         </FormControl>
-      </div>
+      {/* </div> */}
 
       <div className='card'>
         <Cards data={data[0]} />

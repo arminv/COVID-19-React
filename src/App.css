@@ -13,12 +13,32 @@ body {
     '. . dropdown . .'
     'charts charts charts charts charts';
   align-content: center;
-  /* margin: 2% 15%; */
   padding: 0% 0%;
   align-items: center;
   align-content: center;
 }
 
+.dropdown {
+  grid-area: dropdown;
+  margin: 10% 10% !important;
+  padding: 2% 2% !important;
+  border: 1px solid #dec79b;
+  background: whitesmoke;
+}
+
+.card {
+  grid-area: card;
+}
+
+.charts {
+  grid-area: charts;
+  margin: 5% 20%;
+  padding: 2% 2%;
+  border: 1px solid #dec79b;
+}
+
+/* ------- */
+/* MOBILE: */
 @media (max-width: 770px) {
   .container {
     grid-template-areas:
@@ -38,9 +58,9 @@ body {
 @media (max-width: 650px) {
   .container {
     grid-template-areas:
-      '. card .'
-      '. dropdown .'
-      'charts charts charts';
+      'card'
+      'dropdown'
+      'charts';
   }
   .charts {
     margin: 10%;
@@ -48,24 +68,4 @@ body {
   .card {
     margin: 0% 10%;
   }
-}
-
-.dropdown {
-  grid-area: dropdown;
-  margin-top: 10%;
-  margin-bottom: 10%;
-  padding: 2% 2% !important;
-  border: 1px solid #dec79b;
-  background: whitesmoke;
-}
-
-.card {
-  grid-area: card;
-}
-
-.charts {
-  grid-area: charts;
-  margin: 2% 20%;
-  padding: 2% 2%;
-  border: 1px solid #dec79b;
 }
