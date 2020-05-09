@@ -48,7 +48,7 @@ const LineChart = (allData) => {
         {
           label: 'Total Cases',
           data: continent ? continentData : countriesData,
-          backgroundColor: 'rgba(250, 255, 156,0.1)',
+          backgroundColor: 'rgba(250, 255, 156,0.2)',
           // backgroundColor: 'rgba(54, 162, 235, 0.1)',
           // backgroundColor: 'rgba(158, 94, 255, 0.2)',
           // backgroundColor: 'rgba(255, 138, 255, 0.1)',
@@ -72,7 +72,7 @@ const LineChart = (allData) => {
             'rgba(153, 102, 255, 1)',
             'rgba(255, 159, 64, 1)',
           ],
-          borderWidth: 1,
+          borderWidth: 1.5,
         },
       ],
     },
@@ -99,7 +99,8 @@ const LineChart = (allData) => {
             // type: 'logarithmic',
             ticks: {
               //   beginAtZero: false,
-              min: continent ? 0 : MIN_TOTAL_CASES - 20000,
+              // min: continent ? 0 : MIN_TOTAL_CASES - 20000,
+              min: 0,
             },
           },
         ],

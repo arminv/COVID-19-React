@@ -58,7 +58,6 @@ export const fetch_all_history = async (country) => {
     headers: HEADERS,
   })
     .then((response) => {
-      // console.log(response.data.response);
       return response.data.response;
     })
     .catch((error) => {

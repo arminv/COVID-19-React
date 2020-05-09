@@ -13,7 +13,6 @@ import styles from './Cards.module.css';
 
 const Cards = ({ data }) => {
   const { country, cases, deaths, tests, time } = data;
-  console.log(typeof time);
 
   return (
     <div className={styles.container}>

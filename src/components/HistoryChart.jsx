@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Chartjs from 'chart.js';
-Chartjs.defaults.global.defaultFontColor = 'whitesmoke';
+// Chartjs.defaults.global.defaultFontColor = 'whitesmoke';
 Chartjs.defaults.global.defaultFontFamily = 'Arial';
 Chartjs.defaults.global.title.fontSize = 16;
 Chartjs.defaults.global.title.padding = 26;
@@ -31,11 +31,11 @@ const HistoryChart = (allHistoryData) => {
           label: 'Total Cases ',
           data: uniqueData,
           borderColor: 'rgba(255,0,0, 0.5)',
-          backgroundColor: 'rgba(133, 206, 255, 0.1)',
+          backgroundColor: 'rgba(133, 206, 255, 0.2)',
           // backgroundColor: 'rgba(54, 162, 235, 0.1)',
           // backgroundColor: 'rgba(25,25,25, 0.3)',
           // backgroundColor: 'rgba(250, 255, 156,0.1)',
-          borderWidth: 2,
+          borderWidth: 1.5,
         },
       ],
     },

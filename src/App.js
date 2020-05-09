@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NativeSelect, FormControl } from '@material-ui/core';
+import { NativeSelect, FormControl, LinearProgress } from '@material-ui/core';
 
 import './App.css';
 
@@ -52,10 +52,6 @@ const App = () => {
     fetchCountries();
   }, [setCountries]);
 
-  // const allCountriesCards = Object.keys(data).map((card, index) => (
-  //   <Cards data={data[index]} key={index} />
-  // ));
-
   const allCountriesList = Object.keys(countries).map((country, index) => (
     <option key={index} value={countries[index]}>
       {countries[index]}
@@ -71,23 +67,20 @@ const App = () => {
     setIsLoading(false);
   };
 
-  // TODO: fetch_history(country);
-  // TODO: fetch_history();
-
   return isLoading ? (
-    <div className='container'>Loading</div>
+    <LinearProgress className='loading' />
   ) : (
     <div className='container'>
       {/* <div className='dropdown'> */}
-        <FormControl className='dropdown'>
-          <NativeSelect
-            defaultValue=''
-            onChange={(e) => handleCountryChange(e.target.value)}
-          >
-            <option value='All'>Global</option>
-            {allCountriesList}
-          </NativeSelect>
-        </FormControl>
+      <FormControl className='dropdown'>
+        <NativeSelect
+          defaultValue=''
+          onChange={(e) => handleCountryChange(e.target.value)}
+        >
+          <option value='All'>Global</option>
+          {allCountriesList}
+        </NativeSelect>
+      </FormControl>
       {/* </div> */}
 
       <div className='card'>
@@ -108,7 +101,6 @@ const App = () => {
         <br />
         <BarChart data={data[0]} />
       </div>
-      {/* {allCountriesCards} */}
     </div>
   );
 };

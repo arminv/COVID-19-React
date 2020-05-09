@@ -6,6 +6,10 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+.loading {
+  height: 20px !important;
+}
+
 .container {
   display: grid;
   grid-template-areas:
@@ -23,6 +27,7 @@ body {
   padding: 2% 2% !important;
   border: 1px solid #dec79b;
   background: whitesmoke;
+  border-radius: 2% !important;
 }
 
 .card {
@@ -31,9 +36,11 @@ body {
 
 .charts {
   grid-area: charts;
+  background-color: white !important;
   margin: 5% 20%;
   padding: 2% 2%;
-  border: 1px solid #dec79b;
+  border: 4px solid #dec79b;
+  border-radius: 5px;
 }
 
 /* ------- */
@@ -60,15 +67,12 @@ body {
       'card'
       'dropdown'
       'charts';
-    /* '. . card . .'
-      '. . dropdown . .'
-      'charts charts charts charts charts'; */
   }
   .charts {
     margin: 0% !important;
-    
   }
   .card {
     margin: 0% 10%;
   }
 }
+/* ------- */
