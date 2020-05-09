@@ -1,11 +1,19 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Chartjs from 'chart.js';
+Chartjs.defaults.global.animation.easing = 'easeInCubic';
 Chartjs.defaults.global.defaultFontFamily = 'Arial';
-Chartjs.defaults.global.title.fontSize = 16;
-Chartjs.defaults.global.title.padding = 26;
+Chartjs.defaults.global.title.fontSize = 20;
+Chartjs.defaults.global.title.padding = 30;
 Chartjs.defaults.global.elements.point.radius = 5;
 Chartjs.defaults.global.elements.point.pointStyle = 'star';
 Chartjs.defaults.global.elements.line.tension = 0;
+Chartjs.defaults.global.tooltips.titleAlign = 'center';
+Chartjs.defaults.global.tooltips.xPadding = 12;
+Chartjs.defaults.global.tooltips.yPadding = 12;
+Chartjs.defaults.global.tooltips.caretPadding = 12;
+Chartjs.defaults.global.tooltips.caretSize = 9;
+Chartjs.defaults.global.tooltips.borderColor = '#dec79b';
+Chartjs.defaults.global.tooltips.borderWidth = 3;
 // Chartjs.defaults.global.elements.line.fill = false;
 // Chartjs.defaults.global.elements.line.stepped = true;
 
