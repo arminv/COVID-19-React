@@ -47,7 +47,7 @@ const Cards = ({ data }) => {
                 Total New Cases
               </Typography>
               <Typography variant='h6'>
-                +
+                {cases.new && cases.new !== '0' ? `+${cases.new}` : '-'}
                 <CountUp
                   start={0}
                   end={cases.new ? parseInt(cases.new.substr(1)) : 0}

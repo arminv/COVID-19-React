@@ -44,6 +44,23 @@ const PieChart = ({ data }) => {
         text: country === 'All' ? 'Global' : `${country}`,
       },
       legend: { display: true, labels: { padding: 30 } },
+      tooltips: {
+        callbacks: {
+          label: function (tooltipItem, data) {
+            var value = data.datasets[0].data[tooltipItem.index];
+            var label = data.labels[tooltipItem.index];
+            if (parseInt(value) >= 1000) {
+              return (
+                label +
+                ' : ' +
+                value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+              );
+            } else {
+              return value;
+            }
+          },
+        },
+      },
     },
   };
 

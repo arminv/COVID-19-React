@@ -47,6 +47,19 @@ const HistoryChart = (allHistoryData) => {
     options: {
       tooltips: {
         displayColors: false,
+        callbacks: {
+          label: function (tooltipItem, data) {
+            var value = data.datasets[0].data[tooltipItem.index];
+            if (parseInt(value) >= 1000) {
+              return (
+                'Total Cases : ' +
+                value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+              );
+            } else {
+              return 'Total Cases : ' + value;
+            }
+          },
+        },
       },
       title: {
         display: true,
@@ -59,6 +72,9 @@ const HistoryChart = (allHistoryData) => {
             // type: 'logarithmic',
             ticks: {
               min: 0,
+              userCallback: function (value, index, values) {
+                return value.toLocaleString();
+              },
             },
           },
         ],
