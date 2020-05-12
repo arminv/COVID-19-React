@@ -19,16 +19,21 @@ Chartjs.defaults.global.tooltips.borderWidth = 3;
 
 const HistoryChart = (allHistoryData) => {
   const { data } = allHistoryData;
+  // console.log(data);
 
   const uniqueDates = [];
-  const uniqueData = [];
+  const uniqueTotalCases = [];
+  const uniqueTotalDeaths = [];
   for (var i = 0; i < data.length; i++) {
     if (!uniqueDates.includes(data[i]['day'])) {
       uniqueDates.unshift(data[i]['day']);
-      uniqueData.unshift(data[i]['cases']['total']);
+      uniqueTotalCases.unshift(data[i]['cases']['total']);
+      uniqueTotalDeaths.unshift(data[i]['deaths']['total']);
       continue;
     }
   }
+  // console.log(uniqueTotalDeaths);
+  // console.log(uniqueTotalCases);
 
   const chartConfig = {
     type: 'line',
@@ -36,10 +41,17 @@ const HistoryChart = (allHistoryData) => {
       labels: uniqueDates,
       datasets: [
         {
-          label: 'Total Cases ',
-          data: uniqueData,
-          borderColor: 'rgba(255,0,0, 0.5)',
+          label: 'Total Cases',
+          data: uniqueTotalCases,
+          borderColor: 'rgba(52, 55, 235, 0.5)',
           backgroundColor: 'rgba(133, 206, 255, 0.2)',
+          borderWidth: 1.5,
+        },
+        {
+          label: 'Total Deaths',
+          data: uniqueTotalDeaths,
+          borderColor: 'rgba(255,0,0, 0.5)',
+          backgroundColor: 'rgba(242, 168, 63, 0.3)',
           borderWidth: 1.5,
         },
       ],
@@ -49,7 +61,9 @@ const HistoryChart = (allHistoryData) => {
         displayColors: false,
         callbacks: {
           label: function (tooltipItem, data) {
-            var value = data.datasets[0].data[tooltipItem.index];
+            var datasetIndex = tooltipItem.datasetIndex;
+            var itemIndex = tooltipItem.index;
+            var value = data.datasets[datasetIndex].data[itemIndex];
             if (parseInt(value) >= 1000) {
               return (
                 'Total Cases : ' +
@@ -65,7 +79,7 @@ const HistoryChart = (allHistoryData) => {
         display: true,
         text: 'Historical Data',
       },
-      legend: { display: false },
+      legend: { display: true, labels: { padding: 10 } },
       scales: {
         yAxes: [
           {

@@ -43,7 +43,7 @@ const PieChart = ({ data }) => {
         display: true,
         text: country === 'All' ? 'Global' : `${country}`,
       },
-      legend: { display: true, labels: { padding: 30 } },
+      legend: { display: true, labels: { padding: 10 } },
       tooltips: {
         callbacks: {
           label: function (tooltipItem, data) {

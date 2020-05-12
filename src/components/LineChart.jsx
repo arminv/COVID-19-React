@@ -27,7 +27,7 @@ const LineChart = (allData) => {
     }
   }
 
-  const MIN_TOTAL_CASES = 50000;
+  const MIN_TOTAL_CASES = 30000;
   const countriesNames = [];
   const countriesData = [];
   for (const item of data) {
@@ -50,6 +50,18 @@ const LineChart = (allData) => {
           data: continent ? continentData : countriesData,
           backgroundColor: 'rgba(250, 255, 156,0.2)',
           borderColor: [
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
             'rgba(54, 162, 235, 1)',
             'rgba(255, 99, 132, 1)',
             'rgba(255, 206, 86, 1)',
@@ -94,7 +106,7 @@ const LineChart = (allData) => {
         display: true,
         text: continent
           ? 'Continents :'
-          : `Countries with more than ${MIN_TOTAL_CASES} cases :`,
+          : `Countries with more than ${MIN_TOTAL_CASES.toLocaleString()} cases :`,
       },
       legend: { display: false },
       scales: {
