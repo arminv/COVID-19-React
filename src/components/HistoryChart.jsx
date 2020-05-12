@@ -19,7 +19,6 @@ Chartjs.defaults.global.tooltips.borderWidth = 3;
 
 const HistoryChart = (allHistoryData) => {
   const { data } = allHistoryData;
-  // console.log(data);
 
   const uniqueDates = [];
   const uniqueTotalCases = [];
@@ -32,8 +31,6 @@ const HistoryChart = (allHistoryData) => {
       continue;
     }
   }
-  // console.log(uniqueTotalDeaths);
-  // console.log(uniqueTotalCases);
 
   const chartConfig = {
     type: 'line',
