@@ -15,7 +15,6 @@ const LineChart = (allData) => {
     // 'Oceania',
     // 'Antarctica'
   ];
-
   const continentNames = [];
   const continentData = [];
   if (continent) {
@@ -26,7 +25,23 @@ const LineChart = (allData) => {
       }
     }
   }
+  // Sort the continents in descending order:
+  const combinedContinents = [];
+  for (var i = 0; i < continentNames.length; i++) {
+    combinedContinents.push({
+      continent: continentNames[i],
+      data: continentData[i],
+    });
+  }
+  combinedContinents.sort(function (a, b) {
+    return a.data < b.data ? 1 : a.data === b.data ? 0 : -1;
+  });
+  for (var j = 0; j < combinedContinents.length; j++) {
+    continentNames[j] = combinedContinents[j].continent;
+    continentData[j] = combinedContinents[j].data;
+  }
 
+  // Get countries that have a minimum number of total cases:
   const MIN_TOTAL_CASES = 30000;
   const countriesNames = [];
   const countriesData = [];
@@ -38,6 +53,18 @@ const LineChart = (allData) => {
       countriesNames.push(item.country);
       countriesData.push(item.cases.total);
     }
+  }
+  // Sort the countries (with a minimum number of cases) in descending order:
+  const combinedList = [];
+  for (var k = 0; k < countriesNames.length; k++) {
+    combinedList.push({ country: countriesNames[k], data: countriesData[k] });
+  }
+  combinedList.sort(function (a, b) {
+    return a.data < b.data ? 1 : a.data === b.data ? 0 : -1;
+  });
+  for (var l = 0; l < combinedList.length; l++) {
+    countriesNames[l] = combinedList[l].country;
+    countriesData[l] = combinedList[l].data;
   }
 
   const chartConfig = {

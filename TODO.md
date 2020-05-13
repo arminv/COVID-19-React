@@ -1,5 +1,6 @@
 **Ideas:**
 
+- Move sorting into a function (in LineChart)
 - Show total cases as % of: population (need another API), tested, etc.
 - Sort historical chart (of different countries) in a descending order
 - Replace 'Loading...' with a UI component from Material-UI
