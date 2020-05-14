@@ -58,16 +58,20 @@ const HistoryChart = (allHistoryData) => {
         displayColors: false,
         callbacks: {
           label: function (tooltipItem, data) {
+            console.log();
             var datasetIndex = tooltipItem.datasetIndex;
             var itemIndex = tooltipItem.index;
             var value = data.datasets[datasetIndex].data[itemIndex];
             if (parseInt(value) >= 1000) {
               return (
-                'Total Cases : ' +
+                (datasetIndex === 0 ? 'Total Cases : ' : 'Total Deaths : ') +
                 value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
               );
             } else {
-              return 'Total Cases : ' + value;
+              return (
+                (datasetIndex === 0 ? 'Total Cases : ' : 'Total Deaths : ') +
+                value
+              );
             }
           },
         },

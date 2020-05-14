@@ -19,7 +19,10 @@ const Cards = ({ data }) => {
       <Grid container spacing={1} justify='center'>
         <Grid item component={Card} xs={12} md={3} className={styles.card}>
           <Card variant='outlined'>
-            <CardHeader title={country === 'All' ? 'Global' : country} />
+            <CardHeader
+              title={country === 'All' ? 'Global' : country}
+              className={styles.countryName}
+            />
             <CardContent>
               <Typography
                 className={styles.totalCases}
