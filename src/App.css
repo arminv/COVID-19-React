@@ -13,8 +13,8 @@ body {
 .container {
   display: grid;
   grid-template-areas:
-    'card card card card card'
     '. . dropdown . .'
+    'card card card card card'
     'charts charts charts charts charts';
   padding: 0% 0%;
   align-content: center;
@@ -23,7 +23,7 @@ body {
 
 .dropdown {
   grid-area: dropdown;
-  margin: 10% 10% !important;
+  margin: 20% 10% 5% 10% !important;
   padding: 2% 2% !important;
   border: 1px solid #dec79b;
   background: whitesmoke;
@@ -37,7 +37,7 @@ body {
 .charts {
   grid-area: charts;
   background-color: white !important;
-  margin: 5% 20%;
+  margin: 0% 20% 5% 20%;
   padding: 2% 2%;
   border: 4px solid #dec79b;
   border-radius: 5px;
@@ -48,31 +48,38 @@ body {
 @media (max-width: 770px) {
   .container {
     grid-template-areas:
-      '. . card . .'
       '. . dropdown . .'
+      '. . card . .'
       '. charts charts charts .';
 
     margin: 0;
   }
+  .dropdown {
+    margin: 10% 20% 0% 20% !important;
+  }
   .charts {
-    margin: 10%;
+    margin: 0% 10% 5% 10%;
   }
   .card {
-    margin: 0% 10%;
+    margin: 0% 20%;
   }
 }
 @media (max-width: 650px) {
   .container {
     grid-template-areas:
-      'card'
       'dropdown'
+      'card'
       'charts';
   }
+  .dropdown {
+    margin: 0% 35% !important;
+  }
   .charts {
-    margin: 0% !important;
+    margin: 5% 10% !important;
+    /* margin:0% 20% 5% 20%; */
   }
   .card {
-    margin: 0% 10%;
+    margin: 0% 35%;
   }
 }
 /* ------- */
