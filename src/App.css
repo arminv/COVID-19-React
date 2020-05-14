@@ -32,6 +32,7 @@ body {
 
 .card {
   grid-area: card;
+   margin: 0% 20%;
 }
 
 .charts {
@@ -72,10 +73,10 @@ body {
       'charts';
   }
   .dropdown {
-    margin: 0% 35% !important;
+    margin: 10% 35% 0% 35% !important;
   }
   .charts {
-    margin: 5% 10% !important;
+    margin: 0% !important;
     /* margin:0% 20% 5% 20%; */
   }
   .card {
