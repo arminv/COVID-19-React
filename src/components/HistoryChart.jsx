@@ -1,25 +1,32 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Chartjs from 'chart.js';
-Chartjs.defaults.global.animation.easing = 'easeInCubic';
-Chartjs.defaults.global.defaultFontFamily = 'Arial';
-Chartjs.defaults.global.title.fontSize = 20;
-Chartjs.defaults.global.title.padding = 30;
-Chartjs.defaults.global.elements.point.radius = 5;
-Chartjs.defaults.global.elements.point.pointStyle = 'star';
-Chartjs.defaults.global.elements.line.tension = 0;
-Chartjs.defaults.global.tooltips.titleAlign = 'center';
-Chartjs.defaults.global.tooltips.xPadding = 12;
-Chartjs.defaults.global.tooltips.yPadding = 12;
-Chartjs.defaults.global.tooltips.caretPadding = 12;
-Chartjs.defaults.global.tooltips.caretSize = 9;
-Chartjs.defaults.global.tooltips.borderColor = '#dec79b';
-Chartjs.defaults.global.tooltips.borderWidth = 3;
-// Chartjs.defaults.global.elements.line.fill = false;
-// Chartjs.defaults.global.elements.line.stepped = true;
+
+// Global chart configs:
+const CHART_GLOBAL = Chartjs.defaults.global;
+CHART_GLOBAL.animation.easing = 'easeInCubic';
+CHART_GLOBAL.defaultFontFamily = 'Arial';
+
+CHART_GLOBAL.title.fontSize = 20;
+CHART_GLOBAL.title.padding = 30;
+
+CHART_GLOBAL.elements.point.radius = 5;
+CHART_GLOBAL.elements.point.pointStyle = 'star';
+CHART_GLOBAL.elements.line.tension = 0;
+// CHART_GLOBAL.elements.line.fill = false;
+// CHART_GLOBAL.elements.line.stepped = true;
+
+CHART_GLOBAL.tooltips.titleAlign = 'center';
+CHART_GLOBAL.tooltips.xPadding = 12;
+CHART_GLOBAL.tooltips.yPadding = 12;
+CHART_GLOBAL.tooltips.caretPadding = 12;
+CHART_GLOBAL.tooltips.caretSize = 9;
+CHART_GLOBAL.tooltips.borderColor = '#dec79b';
+CHART_GLOBAL.tooltips.borderWidth = 3;
 
 const HistoryChart = (allHistoryData) => {
   const { data } = allHistoryData;
 
+  // There are multiple data points for each day, get the latest one for each day:
   const uniqueDates = [];
   const uniqueTotalCases = [];
   const uniqueTotalDeaths = [];
@@ -101,6 +108,7 @@ const HistoryChart = (allHistoryData) => {
   const chartContainer = useRef(null);
 
   useEffect(() => {
+    // Every time the country selected changes (and hence data passed), we have to update the canvas with a new instance:
     if (historyChartInstance) {
       historyChartInstance.destroy();
     }

@@ -24,26 +24,31 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // Global summary:
     async function getData() {
       const currentData = await fetch_all_data('All');
       setData(currentData);
     }
     getData();
 
+    // Summary data for all countries:
     async function getAllData() {
       const currentAllData = await fetch_all_data();
       setAllData(currentAllData);
     }
     getAllData();
 
+    // All historical data:
     async function getAllHistoryData() {
       const currentHistoryData = await fetch_all_history();
       setAllHistoryData(currentHistoryData);
       setIsLoading(false);
     }
     getAllHistoryData();
+    // As the data is updated every 15mins, we want to fetch on every render (not just once when component mounts):
   }, []);
 
+  // List of all countries:
   useEffect(() => {
     async function fetchCountries() {
       setCountries(await fetch_all_countries());
