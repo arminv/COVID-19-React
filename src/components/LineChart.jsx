@@ -42,7 +42,7 @@ const LineChart = (allData) => {
   }
 
   // Get countries that have a minimum number of total cases:
-  const MIN_TOTAL_CASES = 100000;
+  const MIN_TOTAL_CASES = 300000;
   const countriesNames = [];
   const countriesData = [];
   for (const item of data) {
