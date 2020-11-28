@@ -60,6 +60,7 @@ const BarChart = ({ data }) => {
       scales: {
         yAxes: [
           {
+            type: 'logarithmic',
             // type: 'logarithmic',
             ticks: {
               //   beginAtZero: false,
